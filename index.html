@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benlafkih Orientation Bac Maroc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Benlafkih Orientation</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-tab active" data-tab="orientation">
+                    <i class="fas fa-compass"></i> Orientation
+                </button>
+                <button class="nav-tab" data-tab="admin">
+                    <i class="fas fa-chart-bar"></i> Admin
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ===== ORIENTATION TAB ===== -->
+        <section id="orientationTab" class="tab-content active">
+            <header class="hero">
+                <h1>🎓 Orientation Bac Maroc</h1>
+                <p>Découvrez les écoles accessibles selon vos notes et votre filière.</p>
+            </header>
+            <div class="container">
+
+                <!-- Form Card -->
+                <div class="card form-card">
+                    <h2><i class="fas fa-pen-alt"></i> Vos informations</h2>
+                    <form id="orientationForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName"><i class="fas fa-user"></i> Nom complet</label>
+                            <input type="text" id="fullName" placeholder="Ex: Ahmed Benlafkih" required />
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regionalGrade"><i class="fas fa-file-alt"></i> Note régionale (/20)</label>
+                                <input type="number" id="regionalGrade" placeholder="0" min="0" max="20" step="0.01" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="nationalGrade"><i class="fas fa-file-alt"></i> Note nationale (/20)</label>
+                                <input type="number" id="nationalGrade" placeholder="0" min="0" max="20" step="0.01" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="stream"><i class="fas fa-layer-group"></i> Filière Bac</label>
+                            <select id="stream" required>
+                                <option value="">Sélectionnez votre filière</option>
+                                <option value="SM">Sciences Mathématiques (SM)</option>
+                                <option value="SPC">Sciences Physiques et Chimiques (SPC)</option>
+                                <option value="SVT">Sciences de la Vie et de la Terre (SVT)</option>
+                                <option value="STE">Sciences et Technologies Électriques (STE)</option>
+                                <option value="STM">Sciences et Technologies Mécaniques (STM)</option>
+                                <option value="Eco">Sciences Économiques (Eco)</option>
+                                <option value="Lettres">Lettres et Sciences Humaines</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary" id="calculateBtn">
+                            <i class="fas fa-calculator"></i> Calculer
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results -->
+                <div id="resultsContainer" style="display:none;">
+                    <div class="card result-summary">
+                        <div class="result-avg">
+                            <span class="avg-label">Moyenne</span>
+                            <span class="avg-value" id="averageDisplay">0.00</span>
+                            <span class="avg-label">/ 20</span>
+                        </div>
+                        <div class="result-stream" id="streamDisplay"></div>
+                    </div>
+
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Rechercher une école..." />
+                        </div>
+                        <div class="filter-group">
+                            <i class="fas fa-city"></i>
+                            <select id="cityFilter"><option value="">Toutes les villes</option></select>
+                        </div>
+                        <div class="filter-group">
+                            <i class="fas fa-tag"></i>
+                            <select id="categoryFilter">
+                                <option value="">Toutes les catégories</option>
+                                <option value="Public">Public</option>
+                                <option value="Privé">Privé</option>
+                                <option value="Semi-privé">Semi-privé</option>
+                            </select>
+                        </div>
+                        <span class="result-count" id="resultCount">0 écoles trouvées</span>
+                    </div>
+
+                    <div id="schoolsList" class="schools-grid"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== ADMIN TAB ===== -->
+        <section id="adminTab" class="tab-content">
+            <header class="hero admin-hero">
+                <h1>📊 Tableau de bord Admin</h1>
+                <p>Suivez les statistiques et gérez les données des étudiants.</p>
+            </header>
+            <div class="container">
+
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalUsers">0</span>
+                            <span class="stat-label">Étudiants uniques</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalCalculations">0</span>
+                            <span class="stat-label">Calculs effectués</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-school"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalSchools">0</span>
+                            <span class="stat-label">Écoles référencées</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="todayCalculations">0</span>
+                            <span class="stat-label">Aujourd'hui</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-controls">
+                    <div class="filter-group admin-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="adminSearchInput" placeholder="Rechercher un étudiant..." />
+                    </div>
+                    <button class="btn-export" id="exportCsvBtn">
+                        <i class="fas fa-file-csv"></i> Exporter CSV
+                    </button>
+                    <button class="btn-refresh" id="refreshAdminBtn">
+                        <i class="fas fa-sync-alt"></i> Rafraîchir
+                    </button>
+                </div>
+
+                <div class="card table-card">
+                    <div class="table-wrapper">
+                        <table id="studentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Filière</th>
+                                    <th>Régional</th>
+                                    <th>National</th>
+                                    <th>Moyenne</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentsTableBody">
+                                <tr><td colspan="6" class="empty-state">Aucun étudiant enregistré.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Benlafkih Orientation Bac Maroc — Tous droits réservés.</p>
+    </footer>
+
+    <div id="loadingOverlay" class="loading-overlay" style="display:none;">
+        <div class="spinner"></div>
+        <p>Chargement...</p>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <!-- main script -->
+    <script src="script.js"></script>
+</body>
+</html>
