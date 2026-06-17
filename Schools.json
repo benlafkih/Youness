@@ -1,0 +1,158 @@
+[
+    {
+        "name": "Faculté de Médecine de Casablanca",
+        "city": "Casablanca",
+        "category": "Public",
+        "streams": ["SM", "SPC", "SVT"],
+        "thresholds": [
+            { "year": 2025, "value": 16.5 },
+            { "year": 2024, "value": 16.2 },
+            { "year": 2023, "value": 16.0 },
+            { "year": 2022, "value": 15.8 },
+            { "year": 2021, "value": 15.5 }
+        ]
+    },
+    {
+        "name": "EMI Rabat",
+        "city": "Rabat",
+        "category": "Public",
+        "streams": ["SM", "SPC", "STE"],
+        "thresholds": [
+            { "year": 2025, "value": 17.0 },
+            { "year": 2024, "value": 16.8 },
+            { "year": 2023, "value": 16.5 },
+            { "year": 2022, "value": 16.2 },
+            { "year": 2021, "value": 16.0 }
+        ]
+    },
+    {
+        "name": "ENCG Casablanca",
+        "city": "Casablanca",
+        "category": "Public",
+        "streams": ["SM", "SPC", "SVT", "Eco"],
+        "thresholds": [
+            { "year": 2025, "value": 14.0 },
+            { "year": 2024, "value": 13.8 },
+            { "year": 2023, "value": 13.5 },
+            { "year": 2022, "value": 13.2 },
+            { "year": 2021, "value": 13.0 }
+        ]
+    },
+    {
+        "name": "Ecole Polytechnique de Tanger",
+        "city": "Tanger",
+        "category": "Public",
+        "streams": ["SM", "SPC"],
+        "thresholds": [
+            { "year": 2025, "value": 15.0 },
+            { "year": 2024, "value": 14.8 },
+            { "year": 2023, "value": 14.5 },
+            { "year": 2022, "value": 14.2 },
+            { "year": 2021, "value": 14.0 }
+        ]
+    },
+    {
+        "name": "Faculté des Sciences de Rabat",
+        "city": "Rabat",
+        "category": "Public",
+        "streams": ["SM", "SPC", "SVT"],
+        "thresholds": [
+            { "year": 2025, "value": 12.0 },
+            { "year": 2024, "value": 11.8 },
+            { "year": 2023, "value": 11.5 },
+            { "year": 2022, "value": 11.2 },
+            { "year": 2021, "value": 11.0 }
+        ]
+    },
+    {
+        "name": "INSEA Rabat",
+        "city": "Rabat",
+        "category": "Public",
+        "streams": ["SM", "SPC"],
+        "thresholds": [
+            { "year": 2025, "value": 16.0 },
+            { "year": 2024, "value": 15.8 },
+            { "year": 2023, "value": 15.5 },
+            { "year": 2022, "value": 15.2 },
+            { "year": 2021, "value": 15.0 }
+        ]
+    },
+    {
+        "name": "Ecole Normale Supérieure de Marrakech",
+        "city": "Marrakech",
+        "category": "Public",
+        "streams": ["Lettres", "Eco"],
+        "thresholds": [
+            { "year": 2025, "value": 13.0 },
+            { "year": 2024, "value": 12.8 },
+            { "year": 2023, "value": 12.5 },
+            { "year": 2022, "value": 12.2 },
+            { "year": 2021, "value": 12.0 }
+        ]
+    },
+    {
+        "name": "ISCAE Casablanca",
+        "city": "Casablanca",
+        "category": "Privé",
+        "streams": ["SM", "SPC", "Eco"],
+        "thresholds": [
+            { "year": 2025, "value": 14.5 },
+            { "year": 2024, "value": 14.2 },
+            { "year": 2023, "value": 14.0 },
+            { "year": 2022, "value": 13.8 },
+            { "year": 2021, "value": 13.5 }
+        ]
+    },
+    {
+        "name": "Faculté de Droit de Casablanca",
+        "city": "Casablanca",
+        "category": "Public",
+        "streams": ["Lettres", "Eco"],
+        "thresholds": [
+            { "year": 2025, "value": 11.0 },
+            { "year": 2024, "value": 10.8 },
+            { "year": 2023, "value": 10.5 },
+            { "year": 2022, "value": 10.2 },
+            { "year": 2021, "value": 10.0 }
+        ]
+    },
+    {
+        "name": "Ecole Nationale d'Architecture de Rabat",
+        "city": "Rabat",
+        "category": "Public",
+        "streams": ["SM", "SPC"],
+        "thresholds": [
+            { "year": 2025, "value": 14.0 },
+            { "year": 2024, "value": 13.8 },
+            { "year": 2023, "value": 13.5 },
+            { "year": 2022, "value": 13.2 },
+            { "year": 2021, "value": 13.0 }
+        ]
+    },
+    {
+        "name": "EST Salé",
+        "city": "Salé",
+        "category": "Public",
+        "streams": ["STM", "STE"],
+        "thresholds": [
+            { "year": 2025, "value": 12.0 },
+            { "year": 2024, "value": 11.8 },
+            { "year": 2023, "value": 11.5 },
+            { "year": 2022, "value": 11.2 },
+            { "year": 2021, "value": 11.0 }
+        ]
+    },
+    {
+        "name": "SupMTI Casablanca",
+        "city": "Casablanca",
+        "category": "Privé",
+        "streams": ["SM", "SPC", "STE", "STM"],
+        "thresholds": [
+            { "year": 2025, "value": 13.0 },
+            { "year": 2024, "value": 12.8 },
+            { "year": 2023, "value": 12.5 },
+            { "year": 2022, "value": 12.2 },
+            { "year": 2021, "value": 12.0 }
+        ]
+    }
+]
